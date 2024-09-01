@@ -135,9 +135,9 @@ a {
 	color: inherit;
 
 	&#logo {
-		stroke-width: 2.5;
+		stroke-width: 4;
 
-		&:hover svg {
+		&:hover > svg {
 			filter: drop-shadow(0 0 8px color(from var(--accent) xyz x y z / 0.5));
 
 			@keyframes rainbow {
