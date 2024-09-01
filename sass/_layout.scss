@@ -1,0 +1,174 @@
+@mixin wide {
+	@media screen and (min-width: 75rem) and ((min-aspect-ratio: 2/3) or (orientation: landscape)) {
+		@content
+	}
+}
+
+body {
+	box-sizing: border-box;
+	display: grid;
+	grid-template: "header" "theme" "contents" "main" "footer" / 100%;
+	margin: 2rem clamp(5%, calc(50vmin + 15vw - 50vh), 20rem);
+
+	@include wide {
+		gap: 2rem;
+		grid-template: 
+			". header ."
+			"theme main outline" min-content
+			"contents main outline" min-content
+			". main outline" 1fr
+			"footer footer footer"
+			/ minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+	}
+
+	> nav {
+		grid-area: contents;
+		max-height: calc(100cqmin - 2rem);
+		margin-block-end: 1rem;
+		overflow-y: auto;
+		
+		@include wide {
+			height: fit-content;
+			position: sticky;
+			inset-block-start: 1rem;
+		}
+	}
+
+	> header {
+		grid-area: header;
+		margin-inline: auto;
+
+		> a#logo > svg {
+			height: max-content;
+			min-width: min(100vw, 30rem);
+			max-height: 8rem;
+			overflow: visible;
+			width: auto;
+		}
+	}
+
+	> details {
+		grid-area: theme;
+		user-select: none;
+		white-space: nowrap;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		fieldset {
+			border: none;
+			padding: 0;
+		}
+	}
+
+	> main {
+		grid-area: main;
+
+		&, article, aside, ol.index {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		margin-inline: 1rem;
+	}
+
+	> a#outline {
+		grid-area: outline;
+		background: -moz-element(#content) no-repeat scroll center 0 / contain;
+		display: block;
+		margin: 0 12.5%;
+		max-width: 75%;
+	}
+
+	> footer {
+		grid-area: footer;
+
+		> nav {
+			text-align: center;
+			text-transform: lowercase;
+		}
+	}
+}
+
+nav > ul, ol.index, ul.tags {
+	list-style: none;
+	padding: 0;
+}
+
+nav > ul li {
+	display: inline;
+
+	&:not(:last-child)::after {
+		content: " • " / " ";
+	}
+}
+
+ol.index time {
+	font-style: oblique;
+}
+
+ul.tags {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+
+	li {
+		border: thin solid hsl(0, 0%, 50%, 50%);
+		border-radius: 3px;
+		display: inline-block;
+	}
+
+	a {
+		color: inherit;
+		padding: 0.25em 0.5em;
+	}
+}
+
+section#webring {
+	gap: 1em 3em;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-block: 3em;
+
+	@include wide {
+		grid-template-columns: repeat(3, 1fr);
+		margin-inline: 7.5%;
+	}
+
+	& > :not(& > article) {
+		grid-column: 1 / -1;
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+
+		p {
+			flex-grow: 1;
+			margin-block-end: 1em;
+		}
+
+		h3 {
+			font-size: smaller;
+			margin: 0;
+		}
+	}
+}
+
+@media print {
+	body {
+		background: none !important;
+		color: unset !important;
+		grid-template: "main" / 100%;
+		margin: 0;
+
+		& > *:not(main) {
+			display: none !important;
+		}
+	}
+	main {
+		margin: 0 !important;
+	}
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="generator" content="Zola"/>
+		<meta name="author" content="{{ page.authors[0] | default(value=config.author) | striptags | safe }}"/>
+		<title>{% block title %}{{ section.title }}{% endblock %}</title>
+		<meta name="description" content="{% block description %}{{ section.description | markdown(inline=true) | striptags | safe }}{% endblock %}"/>
+		<link rel="stylesheet" href="{{ get_url(path='/style.css') }}"/>
+		<link rel="sitemap" type="application/xml" href="{{ get_url(path='/sitemap.xml') }}"/>
+		<link rel="alternate" type="application/rss+xml" href="{{ get_url(path='/rss.xml') }}"/>
+		<link rel="alternate" type="application/atom+xml" href="{{ get_url(path='/atom.xml') }}"/>
+		<link rel="icon" sizes="48x48" href="{{ get_url(path='/favicon.ico') }}"/>
+		<link rel="icon" type="image/svg+xml" sizes="any" href="{{ get_url(path='/favicon.svg') }}"/>
+		<link rel="pgpkey" type="text/plain" href="{{ get_url(path='/ethamck.asc') }}" title="ethamck@proton.me" integrity="sha384-{{ get_hash(path='static/ethamck.asc', sha_type=384, base64=true) | safe }}"/>
+		<meta name="darkreader-lock" content="This is why Dark Reader doesn't do anything"/>
+	</head>
+	<body>
+		<a href="#content" aria-label="Skip to content" style="position: absolute;"></a>
+		<header>
+			<a id="logo" href="{{ get_url(path='@/_index.md') }}" aria-label="Back to home">
+				<svg viewBox="0 0 456 128" fill="none" stroke="currentcolor" xmlns="http://www.w3.org/2000/svg">
+					<title>The "ethamck" wordmark</title>
+					<desc>"ethamck" written in the Noto font, with the "e" replaced by a unique glyph.</desc>
+					<path d="M354 128V85c0-20-34-24-44-6m2 50V84c0-20-34-24-44-6m0 50V69Zm-9 0V84c0-20-30-21-46-11m46 16c-45 0-51 20-39 32 7 7 33 7 39-13m-92 20V22Zm0-52c11-15 38-12 38 8v44m-75-93v76c0 17 22 17 36 9m243 1c-57 27-65-70 0-52m10 59V22Zm36-64-32 26 33 38m-356-28L88 88m0-48 12-12M16 64h16M0 0l64 64M0 128l64-64m104 0H64M96 0C64 0 64 64 64 64s0 64 32 64"/>
+				</svg>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="{{ get_url(path='@/weblog/_index.md') }}">Writings</a></li>
+					<li><a href="{{ get_url(path='@/tumblelog/_index.md') }}">Notes</a></li>
+					<li><a href="{{ get_url(path='@/shrine/_index.md') }}">Shrines</a></li>
+					<li><a href="{{ get_url(path='@/diaries/_index.md') }}">Diaries</a></li>
+					<li><a href="{{ get_url(path='@/links/_index.md') }}">Links</a></li>
+				</ul>
+			</nav>
+		</header>
+		<details>
+			<summary>Theme</summary>
+			<fieldset>
+				<input type="radio" id="monochrome" name="theme" onclick="styleOption('theme', 'monochrome');"/>
+				<label for="monochrome">Monochrome</label>
+				<br/>
+				<input type="radio" id="default" name="theme" onclick="styleOption('theme', '');" checked/>
+				<label for="default">Neutral</label>
+				<br/>
+				<input type="radio" id="proton" name="theme" onclick="styleOption('theme', 'proton'); styleOption('font', 'serif');"/>
+				<label for="proton">Proton</label>
+				<br/>
+				<input type="radio" id="night" name="theme" onclick="styleOption('theme', 'night');"/>
+				<label for="night">Stellar</label>
+				<br/>
+				<input type="radio" id="terminal" name="theme" onclick="styleOption('theme', 'terminal'); styleOption('font', 'mono');"/>
+				<label for="terminal">Terminal</label>
+				<fieldset>
+					<legend>Font</legend>
+					<input type="radio" id="sans" name="font" onclick="styleOption('font', '');" checked/>
+					<label for="sans">Sans-serif</label>
+					<br/>
+					<input type="radio" id="serif" name="font" onclick="styleOption('font', 'serif');"/>
+					<label for="serif">Serif</label>
+					<br/>
+					<input type="radio" id="mono" name="font" onclick="styleOption('font', 'mono');"/>
+					<label for="mono">Monospace</label>
+					<br/>
+					<input type="checkbox" id="lowercase" name="lowercase" onclick="styleOption('lowercase', this.checked);"/>
+					<label for="lowercase" title="for classabbyamp (placeviolette.net)">lowercase</label>
+				</fieldset>
+				<script src="{{ get_url(path='/theme.js') }}" defer></script>
+			</fieldset>
+		</details>
+		<nav>
+			{% if section -%}
+				{%- set toc = section.toc -%}
+			{%- elif page -%}
+				{%- set toc = page.toc -%}
+			{%- endif -%}
+
+			{% if toc -%}
+			<ol>
+				{%- for h1 in toc %}
+				<li>
+					<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+					{%- if h1.children %}
+					<ol>
+						{%- for h2 in h1.children %}
+						<li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+						{%- endfor %}
+					</ol>
+					{%- endif %}
+				</li>
+				{%- endfor %}
+			</ol>
+			{%- endif %}
+		</nav>
+		<main id="content">
+			{%- block content %}
+			{{- section.content | safe }}
+			<nav>
+				<ul>
+				{%- for page in section.pages %}
+					<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+				{%- endfor %}
+				</ul>
+			</nav>
+			{%- endblock %}
+		</main>
+		<a id="outline" href="#" tabindex="-1" title="Back to top" aria-hidden="true"></a>
+		<footer>
+			{% block footer %}{% endblock %}
+			<nav>
+				<ul>
+					<li><a href="{{ get_url(path='/rss.xml') }}">Feed</a> <a href="{{ get_url(path='/atom.xml') }}">(atom)</a></li>
+					<li><a href="/todo">Source</a></li>
+					<li><a href="mailto:ethamck@pm.me">Contact</a></li>
+				</ul>
+				<small title="Monero donation address">42zgtQ918o3jTYrvdYpjK6hm<wbr/>Bajn3t4nM8ChpZoEtcmE6DJ9<wbr/>JxxD8Xy9YAT7XXYX8Fg7jbwt<wbr/>UFHtuAxEikrcM1spChvU1B6</small>
+			</nav>
+		</footer>
+	</body>
+</html>

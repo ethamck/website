@@ -1,0 +1,21 @@
+[
+	["https://lukesmith.xyz", "https://lukesmith.xyz/index.xml"],
+	["https://drewdevault.com", "https://drewdevault.com/blog/index.xml"],
+	["https://placeviolette.net", "https://placeviolette.net/atom.xml"],
+	["https://leahneukirchen.org", "https://leahneukirchen.org/blog/index.atom"],
+	["https://artemislena.eu", "https://artemislena.eu/rss.xml"],
+	["https://cadence.moe", "https://cadence.moe/blog/atom.xml"],
+	["https://anhvn.com", "https://anhvn.com/feed.xml"],
+	["https://emersion.fr", "https://emersion.fr/blog/atom.xml"],
+	["https://mxb.dev", "https://mxb.dev/feed.xml"],
+	["https://notnite.com", "https://notnite.com/blog/rss.xml"],
+	["https://ferrad.as", "https://ferrad.as/feed.xml"],
+	["https://annaaurora.eu", "https://annaaurora.eu/atom.xml"],
+	["https://l4.pm", "https://wf.lavatech.top/lun-4/feed"],
+	["https://orowith2os.gitlab.io", "https://orowith2os.gitlab.io/feed.xml"],
+	["https://momi.ca", "https://momi.ca/feed.xml"],
+	["https://cronokirby.com", "https://cronokirby.com/posts/index.xml"],
+	["https://fy.blackhats.net.au", "https://fy.blackhats.net.au/rss.xml"],
+	["https://youngadventuress.com", "https://youngadventuress.com/feed"],
+	["https://textslashplain.com", "https://textslashplain.com/feed/"]
+]

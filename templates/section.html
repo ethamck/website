@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block content %}
+{{- section.content | safe -}}
+{%- for year, pages in section.pages | group_by(attribute="year") -%}
+<h1>{{ year }}</h1>
+<ol class="index">
+	{%- for page in pages %}
+	{%- if loop.index0 == 5 %}
+	<section>
+	{%- endif %}
+	<li>
+		{%- if not loop.index > 5 %}
+		{%- if not loop.index > 2 %}
+		<article><header>
+		{%- endif -%}
+		<h2><a href="{{ page.permalink }}">
+		{%- if page.title %}{{ page.title }}</a></h2>{% endif %}
+		{%- if page.date %}<time datetime="{{ page.date }}">{{ page.date | date(format="%d %B") }}{% if not loop.index > 2 and page.updated %}, revised <time datetime="{{ page.updated }}">{{ page.updated }}</time>{% endif %}</time>{%- if not page.title %}</a></h2>{% endif %}{% endif %}
+
+		{%- if not loop.index > 2 %}
+		</header>
+			{%- if page.summary or page.description %}
+				{{ page.summary | default(value=page.description | markdown | safe) | safe -}}
+			{%- else %}
+				<p>{{ page.content | striptags | truncate(length=200) | safe -}}</p>
+			{%- endif %}
+		</article>
+		{%- else %}
+			{%- if page.summary or page.description %}
+				{{ page.description | default(value=page.summary | striptags | safe) | markdown(inline=true) | striptags | safe -}}
+			{%- else %}
+				{{ page.content | striptags | truncate(length=150) | safe -}}
+			{%- endif %}
+		{%- endif %}
+
+		{%- if not loop.index > 2 and page.taxonomies.tags %}
+		<ul class="tags">
+			{%- for tag in page.taxonomies.tags %}
+			<li><a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></li>
+			{%- endfor %}
+		</ul>
+		{%- endif %}
+		{%- else %}
+			{% if page.date %}<time datetime="{{ page.date }}">{{ page.date | date(format="%m-%d") }}</time>{% endif %}
+			<a href="{{ page.permalink }}">{% if page.title %}{{ page.title }}{% else %}{{ page.description | default(value=page.summary | striptags | truncate(length=80)) | default(value=page.content | striptags | tuncate(length=80)) | markdown(inline=true) | striptags | safe }}{% endif %}</a>
+		{%- endif %}
+	</li>
+	{%- if loop.index > 5 and loop.last %}
+	</section>
+	{%- endif %}
+	{%- endfor %}
+</ol>
+{%- endfor -%}
+{% endblock %}

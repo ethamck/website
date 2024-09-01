@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block title %}Damn, girl, page not found?{% endblock title %}
+{% block description %}But I'd get lost in you anytime{% endblock %}
+
+{% block content %}
+<p><input type="checkbox" id="damngirl" onclick="styleOption('theme', 'night');"/> <label for="damngirl" title="This checkbox will change your theme">Damn, girl!</label></p>
+<h1>Damn, girl, 404</h1>
+<p>Damn, girl, you're so fine, you made this page go 404, because it got lost in you</p>
+<p>Damn, girl, page not found? That's because it found your beauty</p>
+<p>Damn, girl, this page may be lost, but I'm found in your eyes</p>
+<p>Damn, girl, page not found? You're the only page I want to find</p>
+<p>Damn, girl, 404 error? I can't find any error with your smile</p>
+<p>Damn, girl, 404 not found? But your charm is always found on my radar</p>
+<p>Damn, girl, 404? Who cares? You're the only page I want to keep</p>
+<p>Damn, girl, 404? But you're always found on my mind</p>
+<p>Damn, girl, 404? At least I didn't lose you.</p>
+<p>Damn, girl, you're so fine, this page was too intimidated to stay in line</p>
+<p><a href="..">Damn girl, go back a page?</a></p>
+<aside><p>Zaniness inspired by <a href="https://cadence.moe/404">Cadence's 404 page</a> and the stupid time passage modals are a simplified version of <a href="https://celeste.exposed">the one at celeste.exposed</a>.</p></aside>
+
+<style>:has(#damngirl:checked) :not(main *)::before {content: "Damn girl, " / "";}</style>
+<script>
+	const banner = document.createElement("div");
+	banner.style = "display: grid; background-color: black; color: white; position: fixed; top: 0; left: 0; width: 100%;";
+	document.body.appendChild(banner);
+
+	function passage() {
+		const id = Math.random().toString()
+		banner.insertAdjacentHTML("beforeend", `
+			<div id="${id}" style="margin: 1rem; overflow-wrap: break-word;">
+				a new decasecond has dawned&nbsp;
+				<button onclick="document.getElementById('${id}').remove();">ok</button>
+				<button onclick="alert('You cannot cancel the passage of time.');">cancel</button>
+			</div>
+		`);
+
+		setTimeout(passage, 10000);
+	}
+
+	setTimeout(passage, 10000 - new Date().getTime() % 10000);
+</script>
+{% endblock %}
+
+{% block footer %}<center>Can I get your <del>phone number</del> <ins>Monero address</ins>?</center>{% endblock %}

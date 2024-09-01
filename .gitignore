@@ -1,0 +1,10 @@
+*
+!*/**
+
+!content
+!sass
+!static
+!templates
+!config.toml
+!.editorconfig
+!.gitignore

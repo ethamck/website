@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}{{ taxonomy.name }}{% endblock %}
+{% block description %}List of terms under the namespace {{ taxonomy.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ taxonomy.name }}</h1>
+{%- for term in terms | sort(attribute="page_count") | reverse %}
+<h2><a href="{{ term.permalink }}">{{ term.name }}</a></h2>
+<p>
+{{ term.page_count }} post{{ term.page_count | pluralize}}:&#32;
+	{%- for page in term.pages %}
+	<a href="{{ page.permalink }}">{{ page.title | default(value=page.content | striptags | truncate(length=20) | safe) }}</a>{%- if not loop.last -%},&#32;{%- endif -%}
+	{% endfor -%}
+</p>
+{% endfor -%}
+{% endblock %}

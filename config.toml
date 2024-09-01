@@ -1,0 +1,24 @@
+base_url = "localhost"
+
+title = "ethamck nexus"
+description = "The central hub on the web for all my thoughts and projects."
+author = "ethamck"
+default_language = "en"
+taxonomies = [
+	{name = "tags", render = true},
+]
+
+compile_sass = true
+
+generate_feeds = true
+feed_filenames = ["rss.xml", "atom.xml"]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+smart_punctuation = true
+lazy_async_image = true
+bottom_footnotes = false
+
+[extra]
+pull_feeds = false

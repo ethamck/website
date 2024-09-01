@@ -1,0 +1,208 @@
+main a {
+	color: light-dark(#02d, #aaf);
+}
+
+#continue-reading {
+	display: none;
+}
+
+abbr[title] {
+	cursor: help;
+	text-decoration: underline dotted hsl(0, 0%, 50%, 100%);
+}
+
+aside {
+	border: thin solid hsl(0, 0%, 50%, 50%);
+	padding: 1em;
+	opacity: 0.65;
+	overflow: hidden;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: opacity 0.2s ease;
+	}
+	
+	&:hover {
+		opacity: 1;
+	}
+}
+
+b, strong {
+	font-weight: bolder;
+}
+
+blockquote {
+	$distance: 2ch;
+
+	border-left: solid var(--accent);
+	font-style: oblique;
+	margin-left: -$distance;
+	padding-left: $distance;
+	quotes: none;
+
+	p {
+		&::before {
+			content: open-quote;
+		}
+
+		&::after {
+			content: close-quote;
+		}
+	}
+}
+
+code, kbd, pre, samp {
+	line-height: normal;
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+div.footnote-definition {
+	font-size: smaller;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: background-color 1s;
+	}
+
+	p {
+		display: inline;
+	}
+
+	&:target {
+		background-color: hsl(0, 0%, 50%, 15%);
+	}
+}
+
+dfn {
+	all: unset;
+}
+
+iframe {
+	display: block;
+	border: none;
+	outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-block-start: 1em;
+	
+	a {
+		color: inherit;
+
+		&:not(:hover) {
+			text-decoration: underline var(--accent);
+		}
+	}
+}
+h1 {
+	font-size: 2.25em;
+}
+
+header * {
+	margin-block: 0;
+}
+
+hr {
+	border: 1px solid hsl(0, 0%, 50%, 50%);
+	color: inherit;
+	height: 0;
+	margin: 0 20%;
+}
+
+li {
+	margin-block: 0.5em;
+}
+
+:not(pre) > code {
+	padding-block: 0.25em;
+	padding-inline: 0.5em;
+	background-color: hsl(0, 0%, 50%, 15%);
+}
+pre:has(> code) {
+	background-color: hsl(0, 0%, 50%, 15%);
+	padding-block: 1em;
+	overflow: auto;
+
+	> code {
+		display: block;
+
+		&:not(:has(table), :has(mark), .language-diff), > mark {
+			padding-inline-start: 1em;
+		}
+	}
+
+	mark {
+		background-color: hsl(0, 0%, 50%, 25%);
+		color: inherit;
+		display: block;
+		width: 100%;
+	}
+
+	td {
+		padding-block: 0;
+		padding-inline-start: 1em;
+
+		&:nth-of-type(1) {
+			text-align: end;
+			user-select: none;
+			width: 0;
+		}
+
+		mark {
+			color: inherit;
+			background-color: unset;
+		}
+		&:has(mark) {
+			background-color: hsl(0, 0%, 50%, 25%);
+		}
+	}
+
+	code.language-diff, td:has(.z-diff) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	code.language-diff > span > span {
+		margin-inline-start: 1em;
+	}
+}
+
+q {
+	quotes: auto;
+}
+
+sub, sup {
+	line-height: 0;
+	font-size: smaller;
+	position: relative;
+	vertical-align: baseline;
+}
+sub {
+	bottom: -0.25em;
+}
+sup {
+	top: -0.5em;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-indent: 0;
+	width: 100%;
+
+	&:has(thead) tbody td {
+		border: 0.1em solid hsl(0, 0%, 50%, 25%);
+		padding: 0.5em;
+
+		&:has(> a:only-child) {
+			padding: 0;
+
+			> a:only-child {
+				&, * {
+					display: block;
+				}
+
+				padding: 0.5em;
+			}
+		}
+	}
+}

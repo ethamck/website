@@ -1,0 +1,196 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{% if page.description %}{{ page.description | markdown(inline=true) | striptags }}{% else %}{{ page.summary | default(value=page.content) | truncate(length=160) | striptags | safe }}{% endif %}{% endblock %}
+
+{% block content %}
+<article>
+	<header>
+		{% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+		{% if page.date %}<time datetime="{{ page.date }}">{{ page.date }}{%- if page.updated -%}, revised <time datetime="{{ page.updated }}">{{ page.updated }}</time>{%- endif -%}</time>{% endif %}
+		{%- if page.authors %}
+		<address>by
+		{%- for author in page.authors %}
+			{% if author != config.author %}{{ author | safe }}{% if not loop.last %}, {% endif %}{% endif %}
+		{%- endfor %}
+		</address>
+		{%- endif %}
+		<small>{{ page.reading_time }}-minute read</small>
+	</header>
+{{ page.content | safe -}}
+</article>
+{%- if page.taxonomies.tags %}
+<ul class="tags">
+	{%- for tag in page.taxonomies.tags %}
+	<li><a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></li>
+	{%- endfor %}
+</ul>
+{%- endif %}
+{% endblock %}
+
+{% block footer %}
+{#- Will never be satisfied with this code -#}
+{%- if config.extra.pull_feeds -%}
+<section id="webring">
+	<h2>
+		Interesting articles from <a href="{{ get_url(path='/blogroll.json') }}">pages I've stumbled upon</a>
+		<span style="float: inline-end; font-size: 0.75rem; color: #888e;">inspired by <a href="https://git.sr.ht/~sircmpwn/openring">openring</a></span>
+	</h2>
+	{%- set feeds = load_data(path="static/blogroll.json", format="json") -%}
+	{%- set cards = [] -%}
+
+	{%- for feed in feeds -%}
+		{%- set source = feed[0] | default(value="") -%}
+		{%- set feed = load_data(url=feed[1], format="xml") -%}
+
+		{%- if feed.rss and feed.rss["@version"] == 2 -%}
+			{%- set feed = feed.rss.channel -%}
+
+			{%- for item in feed.item | slice(end=3) -%}
+				{%- set keys = item.pubDate | trim | split(pat=" ") -%}
+
+				{# Fuck RFC 822 #}
+
+				{%- set offset = 0 -%}
+				{%- if keys[0] is containing(",") -%}
+					{%- set offset = 1 -%}
+				{%- endif -%}
+
+				{%- set year = 2 + offset -%}{%- set year = keys[year] | trim -%}
+					{# Not "less than" to prevent syntax highlighting errors #}
+					{%- if not year | int >= 1000 -%}
+						{# Include the first two characters in an abbreviated year #}
+						{%- set now = now() | date(format="%C") -%}
+						{%- set year = now ~ year -%}
+					{%- endif -%}
+				{%- set month = 1 + offset -%}{%- set month = keys[month] | trim -%}
+					{%- if month == "Jan" -%}
+						{%- set month = "1" -%}
+					{%- elif month == "Feb" -%}
+						{%- set month = "2" -%}
+					{%- elif month == "Mar" -%}
+						{%- set month = "3" -%}
+					{%- elif month == "Apr" -%}
+						{%- set month = "4" -%}
+					{%- elif month == "May" -%}
+						{%- set month = "5" -%}
+					{%- elif month == "Jun" -%}
+						{%- set month = "6" -%}
+					{%- elif month == "Jul" -%}
+						{%- set month = "7" -%}
+					{%- elif month == "Aug" -%}
+						{%- set month = "8" -%}
+					{%- elif month == "Sep" -%}
+						{%- set month = "9" -%}
+					{%- elif month == "Oct" -%}
+						{%- set month = "10" -%}
+					{%- elif month == "Nov" -%}
+						{%- set month = "11" -%}
+					{%- elif month == "Dec" -%}
+						{%- set month = "12" -%}
+					{%- endif -%}
+				{%- set day = 0 + offset -%}{%- set day = keys[day] | trim -%}
+				{%- set time = 3 + offset -%}{%- set time = keys[time] | trim -%}
+					{%- if time | length == 5 -%}
+						{%- set time = time ~ ":00" -%}
+					{%- endif -%}
+				{%- set zone = 4 + offset -%}{%- set zone = keys[zone] | trim -%}
+					{%- if zone == "UT" or zone == "GMT" -%}
+						{%- set zone = "Z" -%}
+					{%- elif zone == "EDT" -%}
+						{%- set zone = "-0400" -%}
+					{%- elif zone == "EST" or zone == "CDT" -%}
+						{%- set zone = "-0500" -%}
+					{%- elif zone == "CST" or zone == "MDT" -%}
+						{%- set zone = "-0600" -%}
+					{%- elif zone == "MST" or zone == "PDT" -%}
+						{%- set zone = "-0700" -%}
+					{%- elif zone == "PST" -%}
+						{%- set zone = "-0800" -%}
+					{%- endif -%}
+
+				{%- set timestamp = year ~ "-" ~ month ~ "-" ~ day ~ "T" ~ time ~ zone -%}
+
+				{%- set_global cards = cards | concat(with=[timestamp | date(format="%s") | int, feed.title, item.title, item.link, item.description | default(value=item["content:encoded"]), source]) -%}
+			{%- endfor -%}
+		{%- endif -%}
+
+		{%- if feed.feed -%}
+			{%- set feed = feed.feed -%}
+
+			{%- for item in feed.entry | slice(end=3) -%}
+				{%- set_global cards = cards | concat(with=[item.published | default(value=item.updated) | date(format="%s") | int, feed.title, item.title, item.link["@href"], item.summary | default(value=item["content"]), source]) -%}
+			{%- endfor -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+	{# Sort by date by sorting the dates in their own array #}
+	{# This is just because Tera can't nest arrays in templating #}
+	{%- set dates = [] -%}
+	{%- for _ in cards -%}
+		{%- if loop.index0 % 6 != 0 -%}
+			{%- continue -%}
+		{%- endif -%}
+
+		{%- set_global dates = dates | concat(with=cards[loop.index0]) -%}
+	{%- endfor -%}
+	{%- set dates = dates | sort | reverse -%}
+
+	{# Sort using the dates as a reference #}
+	{%- set sorted = [] -%}
+	{%- for date in dates -%}
+		{%- for value in cards -%}
+			{%- if loop.index0 % 6 != 0 -%}
+				{%- continue -%}
+			{%- endif -%}
+
+			{%- if date == value -%}
+				{%- set index0 = loop.index0 -%}
+				{%- set index1 = index0 + 1 -%}
+				{%- set index2 = index0 + 2 -%}
+				{%- set index3 = index0 + 3 -%}
+				{%- set index4 = index0 + 4 -%}
+				{%- set index5 = index0 + 5 -%}
+
+				{%- set_global sorted = sorted | concat(with=[cards[index0], cards[index1], cards[index2], cards[index3], cards[index4], cards[index5]]) -%}
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endfor -%}
+	{%- set cards = sorted -%}
+
+	{%- for iteration in range(end=3) -%}
+		{%- set index = iteration * 6 -%}
+
+		{%- set date = index -%}{%- set date = cards[date] -%}
+		{%- set name = index + 1 -%}{%- set name = cards[name] -%}
+		{%- set link = index + 3 -%}{%- set link = cards[link] -%}
+		{%- set content = index + 4 -%}
+			{%- if cards[content] is string -%}
+				{%- set content = cards[content] -%}
+			{%- elif cards[content]["#text"] -%}
+				{%- set content = cards[content]["#text"] -%}
+			{%- endif -%}
+		{%- set title = index + 2 -%}
+			{# after content to allow empty titles #}
+
+			{%- if cards[title] is string -%}
+				{%- set title = cards[title] -%}
+			{%- elif cards[title]["#text"] -%}
+				{%- set title = cards[title]["#text"] -%}
+			{%- else -%}
+				{%- set title = content | striptags | truncate(length=16) | safe -%}
+			{%- endif %}
+		{%- set source = index + 5 -%}{%- set source = cards[source] -%}
+
+	<article>
+		<h3><a href="{{ link }}">{{ title }}</a></h3>
+		<p>{{ content | regex_replace(pattern=`<(script|style|pre|h1|h2|h3|h4|h5|h6|img|picture|video|iframe|table)([\S\s]*?)>([\S\s]+?)<\/(script|style|pre|h1|h2|h3|h4|h5|h6|img|picture|video|iframe|table)>`, rep=" ") | regex_replace(pattern=`(<(q|blockquote)([\S\s]*?)>\n?|\n?</(q|blockquote)>)`, rep='"') | striptags | truncate(length=384) | safe }}</p>
+		<div>
+			<small style="float: inline-begin;">via <a href="{{ source }}">{{ name }}</a></small>
+			<time datetime="{{ date | int | date(format='%FT%TZ') }}" style="float: inline-end;">{{ date | int | date }}</time>
+		</div>
+	</article>
+	{%- endfor %}
+</section>
+{% endif %}
+{%- endblock %}
