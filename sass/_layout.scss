@@ -8,7 +8,9 @@ body {
 	box-sizing: border-box;
 	display: grid;
 	grid-template: "header" "theme" "contents" "main" "footer" / 100%;
-	margin: 2rem clamp(5%, calc(50vmin + 15vw - 50vh), 20rem);
+	margin-block: 2rem;
+	margin-inline: auto;
+	max-width: min(132ch, 90%);
 
 	@include wide {
 		gap: 2rem;
@@ -37,13 +39,10 @@ body {
 	> header {
 		grid-area: header;
 		margin-inline: auto;
+		min-width: min(50vw, 75%);
 
 		> a#logo > svg {
-			height: max-content;
-			min-width: min(100vw, 30rem);
-			max-height: 8rem;
 			overflow: visible;
-			width: auto;
 		}
 	}
 

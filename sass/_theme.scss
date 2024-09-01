@@ -135,7 +135,7 @@ a {
 	color: inherit;
 
 	&#logo {
-		stroke-width: clamp(0.2em, 0.5cqw, 4px);
+		stroke-width: 2.5;
 
 		&:hover svg {
 			filter: drop-shadow(0 0 8px color(from var(--accent) xyz x y z / 0.5));
