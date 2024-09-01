@@ -31,7 +31,7 @@ If you have a site where you have a page similar to this one and want to include
 </svg>
 ```
 
-It's 868 bytes with whitespace. You can get it down to about one hundred less with minification and [SVGO](https://svgomg.net), or another hundred less with no animation code.
+It's 868 bytes with whitespace. You can get it down to about one hundred less with minification and [SVGO](https://svgomg.net), and another hundred less with no animation code.
 
 You may want to add a `<title>` element with alt text under `<svg>` if you can't use `aria-label` on `<a>`. I don't predefine alt text for this button.
 
@@ -41,14 +41,15 @@ This is my collection of websites I've seen and admire both in design and conten
 |-|-|-|
 | [![wiby.me search](wiby.gif)](https://wiby.me/about/wiby.gif) | [wiby.me](https://wiby.me/) | |
 | [![Tilde Club Badge](tildeclub.gif)](https://tilde.club/~zarate/tildeclub.gif) | [tilde.club](https://tilde.club/) | [users](https://tilde.club/users), [~harper webring](http://tilde.club/~harper/link.html?action=random) |
-| [![The text "cadence now!" on a purple background. There is a moon-shaped logo on the left side and a tiny star in the bottom right.](cadence_now.png)](https://cadence.moe/static/img/cadence_now.png) | [cadence.moe](https://cadence.moe) | [/links](https://cadence.moe/links) |
+| [![The text "cadence now!" on a purple background. There is a moon-shaped logo on the left side and a tiny star in the bottom right.](cadence_now.png)](https://cadence.moe/static/img/cadence_now.png) | [cadence.moe](https://cadence.moe) | [links](https://cadence.moe/links) |
 | | [artemislena.eu](https://artemislena.eu) | [Webrings](https://artemislena.eu/webring.html) |
 | [![n00buntu is bloated! LARBS - "much better"](larbs.gif)](https://larbs.xyz/pix/larbs.gif) | [lukesmith.xyz](https://lukesmith.xyz) | |
-| [![vern.cc ~cobra](cobra.png)](https://cobra.vern.cc/media/buttons/cobra.png) | [cobra.vern.cc](https://cobra.vern.cc) | [/sites](https://cobra.vern.cc/sites), [Bring](https://webring.crumpetalpaca.eu.org) |
+| [![vern.cc ~cobra](cobra.png)](https://cobra.vern.cc/media/buttons/cobra.png) | [cobra.vern.cc](https://cobra.vern.cc) | [Other cool sites](https://cobra.vern.cc/sites), [Bring](https://webring.crumpetalpaca.eu.org) |
 | [![NetNite Navigator](navigator.gif)](https://notnite.com/buttons/navigator.gif) | [notnite.com/blog](https://notnite.com/blog) | [notnite.com](https://notnite.com) |
-| | [libdb.so](https://libdb.so) | [acmFriends](https://libdb.so/acmfriends-webring) |
+| | [libdb.so](https://libdb.so) | [acmFriends](https://libdb.so/acmfriends-webring), [roboring](https://stellophiliac.github.io/roboring) |
 | | [anhvn](https://anhvn.com) | |
 | | [celeste.exposed](https://celeste.exposed) | |
+| | [vibasite](https://viba.neocities.org) | [GEORGE](https://george.gh0.pw) |
 
 <h2>See also</h2><!-- remove from table of contents -->
 
@@ -56,6 +57,10 @@ This is my collection of websites I've seen and admire both in design and conten
 - [ooh.directory](https://ooh.directory)
 - [The Big List of Personal Websites](http://biglist.terraaeon.com)
 - [whimsical.club](https://whimsical.club)
+- [johnvertisement](https://john.citrons.xyz)
 - [IndieWeb's list of webrings](https://indieweb.org/webring#Examples)
+- [250KB Club](https://250kb.club)
+- [512KB Club](https://512kb.club)
+- [1MB Club](https://1mb.club)
 
-<aside>The views expressed on any linked pages are not unconditionally my own.</aside>
+<aside>The views expressed on any linked pages are not unconditionally my own. <a href="https://eda.gay#nice+websites">Don't blame me if you catch brainworms.</a></aside>

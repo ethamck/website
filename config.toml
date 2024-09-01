@@ -21,4 +21,4 @@ lazy_async_image = true
 bottom_footnotes = false
 
 [extra]
-pull_feeds = false
+pull_feeds = true
