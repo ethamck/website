@@ -1,6 +1,6 @@
 :root {
 	height: 100%;
-	line-height: 1.35lh;
+	line-height: 2rem;
 	tab-size: 6;
 	width: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -21,9 +21,12 @@
 	--background: light-dark(#fff8e7, hsl(0, 0%, 10%));
 	--accent: #003366;
 	--gradient-foreground: white;
-	--gradient-background: linear-gradient(120deg, black, hsl(from var(--accent) h s calc(l / 2)), var(--accent), hsl(from var(--accent) h s calc(l / 3)));
+	--gradient-background: var(--accent);
+	@supports (color: color(from white xyz x y z)) {
+		--gradient-background: linear-gradient(120deg, black, hsl(from var(--accent) h s calc(l / 2)), var(--accent), hsl(from var(--accent) h s calc(l / 3)));
+	}
 
-	/* Developed with Noto, falls back to https://systemfontstack.com */
+	/* Developed for Noto, falls back to https://systemfontstack.com */
 	font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 	&.serif, q, blockquote {
 		font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;

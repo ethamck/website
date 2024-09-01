@@ -101,6 +101,7 @@ nav > ul li {
 	display: inline;
 
 	&:not(:last-child)::after {
+		content: " • ";
 		content: " • " / " ";
 	}
 }
