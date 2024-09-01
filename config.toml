@@ -1,4 +1,4 @@
-base_url = "localhost"
+base_url = "/"
 
 title = "ethamck nexus"
 description = "The central hub on the web for all my thoughts and projects."
