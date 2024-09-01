@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ page.title | default(value=page.content | striptags | truncate(length=24) | safe) }}{% endblock %}
 {% block description %}{% if page.description %}{{ page.description | markdown(inline=true) | striptags }}{% else %}{{ page.summary | default(value=page.content) | truncate(length=160) | striptags | safe }}{% endif %}{% endblock %}
 
 {% block content %}
