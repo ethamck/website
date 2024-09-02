@@ -7,13 +7,13 @@
 body {
 	box-sizing: border-box;
 	display: grid;
+	gap: 1.5rem;
 	grid-template: "header" "theme" "contents" "main" "footer" / 100%;
 	margin-block: 2rem;
 	margin-inline: auto;
 	max-width: min(132ch, 90%);
 
 	@include wide {
-		gap: 2rem;
 		grid-template: 
 			". header ."
 			"theme main outline" min-content
@@ -26,13 +26,13 @@ body {
 	> nav {
 		grid-area: contents;
 		max-height: calc(100cqmin - 2rem);
-		margin-block-end: 1rem;
 		overflow-y: auto;
 		
 		@include wide {
 			height: fit-content;
 			position: sticky;
 			inset-block-start: 1rem;
+			margin-block-end: 1rem;
 		}
 	}
 
