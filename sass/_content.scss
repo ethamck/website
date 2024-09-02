@@ -64,7 +64,7 @@ div.footnote-definition {
 		transition: background-color 1s;
 	}
 
-	p {
+	> p:only-of-type {
 		display: inline;
 	}
 

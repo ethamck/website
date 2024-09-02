@@ -39,33 +39,17 @@
 		<details>
 			<summary>Theme</summary>
 			<fieldset>
-				<input type="radio" id="monochrome" name="theme" onclick="styleOption('theme', 'monochrome');"/>
-				<label for="monochrome">Monochrome</label>
-				<br/>
-				<input type="radio" id="default" name="theme" onclick="styleOption('theme', '');" checked/>
-				<label for="default">Neutral</label>
-				<br/>
-				<input type="radio" id="proton" name="theme" onclick="styleOption('theme', 'proton'); styleOption('font', 'serif');"/>
-				<label for="proton">Proton</label>
-				<br/>
-				<input type="radio" id="night" name="theme" onclick="styleOption('theme', 'night');"/>
-				<label for="night">Stellar</label>
-				<br/>
-				<input type="radio" id="terminal" name="theme" onclick="styleOption('theme', 'terminal'); styleOption('font', 'mono');"/>
-				<label for="terminal">Terminal</label>
+				<label><input type="radio" id="monochrome" name="theme" onclick="styleOption('theme', 'monochrome');"/> Monochrome</label>
+				<label><input type="radio" id="default" name="theme" onclick="styleOption('theme', '');" checked/> Neutral</label>
+				<label><input type="radio" id="proton" name="theme" onclick="styleOption('theme', 'proton'); styleOption('font', 'serif');"/> Proton</label>
+				<label><input type="radio" id="night" name="theme" onclick="styleOption('theme', 'night');"/> Stellar</label>
+				<label><input type="radio" id="terminal" name="theme" onclick="styleOption('theme', 'terminal'); styleOption('font', 'mono');"/> Terminal</label>
 				<fieldset>
 					<legend>Font</legend>
-					<input type="radio" id="sans" name="font" onclick="styleOption('font', '');" checked/>
-					<label for="sans">Sans-serif</label>
-					<br/>
-					<input type="radio" id="serif" name="font" onclick="styleOption('font', 'serif');"/>
-					<label for="serif">Serif</label>
-					<br/>
-					<input type="radio" id="mono" name="font" onclick="styleOption('font', 'mono');"/>
-					<label for="mono">Monospace</label>
-					<br/>
-					<input type="checkbox" id="lowercase" name="lowercase" onclick="styleOption('lowercase', this.checked);"/>
-					<label for="lowercase" title="for classabbyamp (placeviolette.net)">lowercase</label>
+					<label><input type="radio" id="sans" name="font" onclick="styleOption('font', '');" checked/> Sans-serif</label>
+					<label><input type="radio" id="serif" name="font" onclick="styleOption('font', 'serif');"/> Serif</label>
+					<label><input type="radio" id="mono" name="font" onclick="styleOption('font', 'mono');"/> Monospace</label>
+					<label><input type="checkbox" id="lowercase" name="lowercase" onclick="styleOption('lowercase', this.checked);"/> lowercase</label>
 				</fieldset>
 				<script src="{{ get_url(path='/theme.js') }}" defer></script>
 			</fieldset>

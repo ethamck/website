@@ -57,6 +57,13 @@ body {
 
 		fieldset {
 			border: none;
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+		}
+
+		legend {
+			margin-inline-start: -1em;
 			padding: 0;
 		}
 	}
