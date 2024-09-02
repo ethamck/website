@@ -17,22 +17,23 @@ body {
 		grid-template: 
 			". header ."
 			"theme main outline" min-content
-			"contents main outline" min-content
-			". main outline" 1fr
+			"contents main outline" 1fr
 			"footer footer footer"
 			/ minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
 	}
 
 	> nav {
 		grid-area: contents;
-		max-height: calc(100cqmin - 2rem);
-		overflow-y: auto;
+
+		> ol {
+			max-height: calc(100cqmin - 2rem);
+			overflow-y: auto;
 		
-		@include wide {
-			height: fit-content;
-			position: sticky;
-			inset-block-start: 1rem;
-			margin-block-end: 1rem;
+			@include wide {
+				height: fit-content;
+				inset-block: 1rem;
+				position: sticky;
+			}
 		}
 	}
 
