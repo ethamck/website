@@ -15,7 +15,7 @@ Shrines I either want to see you make or that I'll make at some point in the fut
 - [Aground](https://whitethorngames.com/aground)!
 - Jungle
 - ABBA
-- the [Kingdom](https://wikipedia.org/wiki/Kingdom_(video_game)) series
+- the [Kingdom](https://kingdomthegame.com) series
 - Electric Guest
 
 Before clicking on any of these, note that Lighthouse is extremely cross with me for all of these given the fact that almost no compression is done and assets are linked multiple times for redundancy. Data charges may apply. With that said, even in [all their uncompressed glory](https://idlewords.com/talks/website_obesity.htm), all these pages are probably still less than a 16MB [Apple Watch review](https://theverge.com/a/apple-watch-review).
