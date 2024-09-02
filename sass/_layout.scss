@@ -119,6 +119,7 @@ ol.index time {
 ul.tags {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 1rem;
 
 	li {
