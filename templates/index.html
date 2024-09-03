@@ -17,9 +17,34 @@
 		<meta name="darkreader-lock" content="This is why Dark Reader doesn't do anything"/>
 	</head>
 	<body>
-		<a href="#content" aria-label="Skip to content" style="position: absolute;"></a>
+		<nav>
+			<a href="#content" title="Skip to content" aria-label="Skip to content" style="position: absolute;"></a>
+
+			{% if section -%}
+				{%- set toc = section.toc -%}
+			{%- elif page -%}
+				{%- set toc = page.toc -%}
+			{%- endif -%}
+
+			{% if toc -%}
+			<ol>
+				{%- for h1 in toc %}
+				<li>
+					<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+					{%- if h1.children %}
+					<ol>
+						{%- for h2 in h1.children %}
+						<li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+						{%- endfor %}
+					</ol>
+					{%- endif %}
+				</li>
+				{%- endfor %}
+			</ol>
+			{%- endif %}
+		</nav>
 		<header>
-			<a id="logo" href="{{ get_url(path='@/_index.md') }}" aria-label="Back to home">
+			<a id="logo" href="{{ get_url(path='@/_index.md') }}" title="Back to home" aria-label="Back to home">
 				<svg viewBox="0 0 456 128" fill="none" stroke="currentcolor" xmlns="http://www.w3.org/2000/svg">
 					<title>The "ethamck" wordmark</title>
 					<desc>"ethamck" written in the Noto font, with the "e" replaced by a unique glyph.</desc>
@@ -54,30 +79,6 @@
 				<script src="{{ get_url(path='/theme.js') }}" defer></script>
 			</fieldset>
 		</details>
-		<nav>
-			{% if section -%}
-				{%- set toc = section.toc -%}
-			{%- elif page -%}
-				{%- set toc = page.toc -%}
-			{%- endif -%}
-
-			{% if toc -%}
-			<ol>
-				{%- for h1 in toc %}
-				<li>
-					<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-					{%- if h1.children %}
-					<ol>
-						{%- for h2 in h1.children %}
-						<li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
-						{%- endfor %}
-					</ol>
-					{%- endif %}
-				</li>
-				{%- endfor %}
-			</ol>
-			{%- endif %}
-		</nav>
 		<main id="content">
 			{%- block content %}
 			{{- section.content | safe }}
@@ -90,7 +91,7 @@
 			</nav>
 			{%- endblock %}
 		</main>
-		<a id="outline" href="#" tabindex="-1" title="Return to top" aria-hidden="true"></a>
+		<a id="outline" href="#" title="Return to top" aria-label="Return to top"></a>
 		<footer>
 			{% block footer %}{% endblock %}
 			<nav>
