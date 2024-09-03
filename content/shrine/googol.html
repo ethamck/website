@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Googol</title>
+<style>
+	/* I'm not brave enough to include this
+	@font-face {
+		font-family: "Google Sans";
+		font-style: normal;
+		font-display: block;
+		src: url("https://fonts.gstatic.com/s/googlesans/v61/4UaRrENHsxJlGDuGo1OIlJfC6mGS6vhAK1YobMu2vgCIhM907w.woff2") format("woff2");
+		unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	*/
+
+	:not(head) {
+		all: unset;
+		display: revert;
+	}
+	body {
+		background-color: #141314;
+		color: #e6e1e3;
+		display: grid;
+		font-family: "Noto Sans", "Roboto", sans-serif;
+		grid-auto-rows: 90vh auto;
+		margin-block-end: 2.5%;
+	}
+	h1 {
+		font-family: "Google Sans", "Product Sans", "Avenir", "Glacial Indifference", "Futura";
+		font-size: 2rem;
+		grid-column: 1 / -1;
+		text-align: center;
+	}
+	a:hover, [type="submit"]:hover {
+		cursor: pointer;
+	}
+	body > form {
+		display: grid;
+		grid-template-columns: repeat(2, min-content);
+		grid-template-rows: repeat(2, min-content);
+		gap: 1rem;
+		margin: auto;
+	}
+	body > form > h1 {
+		font-size: 4rem;
+	}
+	input {
+		border: thin solid hsl(0, 0%, 50%, 50%);
+		border-radius: 16px;
+		grid-row: 2;
+		padding: 1em;
+	}
+	input[type="search"] {
+		max-width: 80ch;
+		width: 50cqw;
+	}
+	body > section {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin-inline: auto;
+		min-width: 40ch;
+	}
+</style>
+
+<form action="https://duckduckgo.com/search" autocomplete="off" method="get" role="search">
+	<h1><img style="height: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"/></h1>
+	<input type="search" name="q" placeholder="Search the world's information" autofocus/>
+	<input type="submit" value="Search"/>
+</form>
+<section>
+	<h1>Apps</h1>
+	<a href="https://gmail.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" title="Gmail" alt="Gmail"/></a>
+	<a href="https://maps.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Google_Maps_Logo_2020.svg" title="Maps" alt="Maps"/></a>
+	<a href="https://drive.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" title="Drive" alt="Drive"/></a>
+</section>

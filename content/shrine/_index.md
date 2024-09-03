@@ -73,3 +73,15 @@ which is laughably rudimentary code to prevent the page from loading if it's not
 The page as archived with inline scripting can't even go in the [250KB club](https://250kb.club); it's about ten thousand lines.
 
 I wager that for the most part our protagonist Colin Barschel knew little more than a beginner would about the web. Most of the business logic is either a giant `if` statement to decide what command the user is running or a giant array of every line in each psuedofile, and the rest is third-party. I do forfeit that this could be just what the state of the web was in 2006, though.
+
+## [Googol](googol.html)
+
+Remember when I said a shrine could be something the author hates?
+
+This is a Google homepage redesign in a handful of kilobytes, and looks better than the multi-megabyte crap that it currently is.
+
+<aside>With that said, Google's size when filtering out all the tracking is in fact only 38kB.</aside>
+
+There is zero JavaScript and the search bar takes you to DuckDuckGo just in case you actually try to look something up. The apps don't have this, though, so clicking on them will redirect you to Google and subject you to the whims of the company.
+
+To be realistic, this wasn't necessary, and the new tab page of Chromium is a much more effective redesign.
