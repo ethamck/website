@@ -58,7 +58,6 @@ body {
 
 		fieldset {
 			border: none;
-			display: flex;
 			flex-direction: column;
 			padding: 0;
 		}
@@ -100,6 +99,16 @@ body {
 			}
 		}
 	}
+}
+
+fieldset {
+	display: inline-flex;
+	column-gap: 1ch;
+}
+
+label {
+	display: inline-flex;
+	column-gap: 0.5ch;
 }
 
 nav > ul, ol.index, ul.tags {

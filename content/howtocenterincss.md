@@ -15,8 +15,8 @@ A <samp>(default)</samp> means that one or more properties are redundant.
 
 ## What is the element displayed as?
 
-<input id="inline" name="content" type="radio" checked/> <label for="inline">Inline <small>(text, `span`, `a`, ...)</small></label><br/>
-<input id="block" name="content" type="radio"/> <label for="block">Block <small>(block, `div`, `p`, ...)</small></label>
+<label><input id="inline" name="content" type="radio" checked/> Inline <small>(text, `span`, `a`, ...)</small></label><br/>
+<label><input id="block" name="content" type="radio"/> Block <small>(block, `div`, `p`, ...)</small></label>
 
 ## How should it be aligned?
 
@@ -25,23 +25,22 @@ Alignment is based on the text directionality, named using <abbr title="Left to 
 A height of `5em` is applied to the container for illustrative purposes.
 
 <form>
-	<fieldset style="display: inline;">
+	<fieldset>
 		<legend>Horizontally</legend>
-		<input id="left" name="horizontal" type="radio" checked/> <label for="left">Left</label>
-		<input id="center" name="horizontal" type="radio"/> <label for="center">Center</label>
-		<input id="right" name="horizontal" type="radio"/> <label for="right">Right</label>
+		<label><input id="left" name="horizontal" type="radio" checked/> Left</label>
+		<label><input id="center" name="horizontal" type="radio"/> Center</label>
+		<label><input id="right" name="horizontal" type="radio"/> Right</label>
 	</fieldset>
-	<fieldset style="display: inline;">
+	<fieldset>
 		<legend>Vertically</legend>
-		<input id="top" name="vertical" type="radio" checked/> <label for="top">Top <abbr title="No effect. For a sticky block, use absolute position.">(none)</abbr></label>
-		<input id="middle" name="vertical" type="radio"/> <label for="middle">Middle</label>
-		<input id="bottom" name="vertical" type="radio"/> <label for="bottom">Bottom</label>
+		<label><input id="top" name="vertical" type="radio" checked/> Top <abbr title="No effect. For a sticky block, use absolute position.">(none)</abbr></label>
+		<label><input id="middle" name="vertical" type="radio"/> Middle</label>
+		<label><input id="bottom" name="vertical" type="radio"/> Bottom</label>
 	</fieldset>
 </form>
 
-<input id="multiline" name="multiline" type="checkbox"/> <label for="multiline">Multiline text</label>
-
-<input id="direction" name="direction" type="checkbox" onclick="document.getElementById('preview').dir = this.checked ? 'rtl' : 'ltr'"/> <label for="direction">Preview RTL</label>
+<label><input id="multiline" name="multiline" type="checkbox"/> Multiline text</label><br/>
+<label><input id="direction" name="direction" type="checkbox" onclick="document.getElementById('preview').dir = this.checked ? 'rtl' : 'ltr'"/> Preview RTL</label>
 
 <h2 id="method"></h2>
 <section id="preview" style="outline: thin dashed; min-height: 5em;"></section>
