@@ -2,6 +2,7 @@
 title = "Weblog"
 description = "Index of all my blog posts."
 sort_by = "date"
+generate_feeds = true
 +++
 
 The title and link to this page is "<samp>weblog</samp>", which is in reference to the etymology of "blog". As [Cadence](https://cadence.moe) writes [in an explanatory post](https://cadence.moe/blog/2022-11-18-latest-changes-to-my-website),

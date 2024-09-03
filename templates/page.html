@@ -41,7 +41,7 @@
 
 	{%- for feed in feeds -%}
 		{%- set source = feed[0] | default(value="") -%}
-		{%- set feed = load_data(url=feed[1], format="xml") -%}
+		{%- set feed = load_data(url=feed[1], format="xml", required=false) -%}
 
 		{%- if feed.rss and feed.rss["@version"] == 2 -%}
 			{%- set feed = feed.rss.channel -%}

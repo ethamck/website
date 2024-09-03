@@ -9,8 +9,7 @@
 		<meta name="description" content="{% block description %}{{ section.description | markdown(inline=true) | striptags | safe }}{% endblock %}"/>
 		<link rel="stylesheet" href="{{ get_url(path='/style.css') }}"/>
 		<link rel="sitemap" type="application/xml" href="{{ get_url(path='/sitemap.xml') }}"/>
-		<link rel="alternate" type="application/rss+xml" href="{{ get_url(path='/rss.xml') }}"/>
-		<link rel="alternate" type="application/atom+xml" href="{{ get_url(path='/atom.xml') }}"/>
+		{% if section and section.generate_feeds %}<link rel="alternate" type="application/atom+xml" title="{{ section.title }} posts" href="atom.xml"/>{% else %}<!-- Navigate to a supported section to see Atom feeds -->{% endif %}
 		<link rel="icon" sizes="48x48" href="{{ get_url(path='/favicon.ico') }}"/>
 		<link rel="icon" type="image/svg+xml" sizes="any" href="{{ get_url(path='/favicon.svg') }}"/>
 		<link rel="pgpkey" type="text/plain" href="{{ get_url(path='/ethamck.asc') }}" title="ethamck@proton.me" integrity="sha384-{{ get_hash(path='static/ethamck.asc', sha_type=384, base64=true) | safe }}"/>
@@ -96,7 +95,7 @@
 			{% block footer %}{% endblock %}
 			<nav>
 				<ul>
-					<li><a href="{{ get_url(path='/rss.xml') }}">Feed</a> <a href="{{ get_url(path='/atom.xml') }}">(atom)</a></li>
+					<li>{% if section and section.generate_feeds %}<a href="atom.xml">{{ section.title }} feed</a>{% else %}Feeds are generated for sections{% endif %}</li>
 					<li><a href="https://github.com/ethamck/website">Source</a></li>
 					<li><a href="mailto:ethamck@pm.me">Contact</a></li>
 				</ul>

@@ -2,6 +2,7 @@
 title = "Tumblelog"
 description = "A collection of short-form writings or links and some short commentary."
 sort_by = "date"
+generate_feeds = true
 +++
 
 > A tumblelog is a quick and dirty stream of consciousness, a bit like a remaindered links style linklog but with more than just links.

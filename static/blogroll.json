@@ -17,8 +17,12 @@
 	["https://cronokirby.com", "https://cronokirby.com/posts/index.xml"],
 	["https://fy.blackhats.net.au", "https://fy.blackhats.net.au/rss.xml"],
 	["https://youngadventuress.com", "https://youngadventuress.com/feed"],
-	["https://textslashplain.com", "https://textslashplain.com/feed/"],
+	["https://textslashplain.com", "https://textslashplain.com/feed"],
 	["https://matuzo.at", "https://matuzo.at/feed_all.xml"],
 	["https://lukealexdavis.co.uk", "https://lukealexdavis.co.uk/blog.xml"],
-	["https://ntietz.com", "https://ntietz.com/atom.xml"]
+	["https://ntietz.com", "https://ntietz.com/atom.xml"],
+	["https://stefanjudis.com", "https://stefanjudis.com/rss.xml"],
+	["https://chriscoyier.net", "https://chriscoyier.net/feed"],
+	["https://hidde.blog", "https://hidde.blog/feed"],
+	["https://blog.jim-nielsen.com", "https://blog.jim-nielsen.com/feed.xml"]
 ]

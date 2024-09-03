@@ -94,7 +94,10 @@ body {
 
 		> nav {
 			text-align: center;
-			text-transform: lowercase;
+
+			> ul {
+				text-transform: lowercase;
+			}
 		}
 	}
 }
@@ -131,7 +134,8 @@ ul.tags {
 
 	a {
 		color: inherit;
-		padding: 0.25em 0.5em;
+		display: block;
+		padding-inline: 0.5em;
 	}
 }
 
