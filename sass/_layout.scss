@@ -160,7 +160,7 @@ section#webring {
 		margin-inline: 7.5%;
 	}
 
-	& > :not(& > article) {
+	& > :not(article) {
 		grid-column: 1 / -1;
 	}
 
