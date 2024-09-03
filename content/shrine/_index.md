@@ -74,7 +74,7 @@ The page as archived with inline scripting can't even go in the [250KB club](htt
 
 I wager that for the most part our protagonist Colin Barschel knew little more than a beginner would about the web. Most of the business logic is either a giant `if` statement to decide what command the user is running or a giant array of every line in each psuedofile, and the rest is third-party. I do forfeit that this could be just what the state of the web was in 2006, though.
 
-## [Googol](googol.html)
+## [Google](googol.html)
 
 Remember when I said a shrine could be something the author hates?
 
@@ -82,6 +82,6 @@ This is a Google homepage redesign in a handful of kilobytes, and looks better t
 
 <aside>With that said, Google's size when filtering out all the tracking is in fact only 38kB.</aside>
 
-There is zero JavaScript and the search bar takes you to DuckDuckGo just in case you actually try to look something up. The apps don't have this, though, so clicking on them will redirect you to Google and subject you to the whims of the company.
+There is zero JavaScript. It's done with a simple form.
 
 To be realistic, this wasn't necessary, and the new tab page of Chromium is a much more effective redesign.
