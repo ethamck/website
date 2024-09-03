@@ -9,8 +9,9 @@ body {
 	display: grid;
 	gap: 1.5rem;
 	grid-template: "header" "theme" "contents" "main" "footer" / 100%;
+	margin: auto;
 	margin-block: 2rem;
-	margin-inline: auto;
+	max-width: 80ch;
 	max-width: min(132ch, 90%);
 
 	@include wide {
