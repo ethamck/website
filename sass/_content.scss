@@ -60,16 +60,17 @@ code, kbd, pre, samp {
 div.footnote-definition {
 	font-size: smaller;
 
-	@media (prefers-reduced-motion: no-preference) {
-		transition: background-color 1s;
-	}
-
 	> p:only-of-type {
 		display: inline;
 	}
+}
 
-	&:target {
-		background-color: hsl(0, 0%, 50%, 15%);
+:is(div.footnote-definition, h1, h2, h3, h4, h5, h6):target {
+	background-color: hsl(0, 0%, 50%, 10%);
+	padding: 1rem;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: background-color 1s;
 	}
 }
 
