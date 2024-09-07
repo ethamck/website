@@ -1,4 +1,5 @@
 +++
+updated = "2024-09-07"
 title = "The Virtues of Good Web Design"
 description = "A few points to follow when making a quaint website and advice on how to better satisfy users."
 [taxonomies]
@@ -7,7 +8,7 @@ tags = ["design", "web"]
 
 > It seems that perfection is attained not when there is nothing more to add, but when there is nothing more to remove.
 
---- Antoine de Saint Exupéry, <cite>Terre des Hommes</cite> (1939) ([variant translation](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry#Terre_des_Hommes_(1939)))
+--- Antoine de Saint Exupéry, <cite>Terre des Hommes</cite> (1939) ([English variant translation](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry#Terre_des_Hommes_(1939)))
 
 Yes, I did just quote this at you. You've probably heard it before. That's because it sounds poetic. But it's also true.
 
@@ -38,7 +39,7 @@ And a navigation bar, in any place, can also take away from your content:
 
 Consider [Google's homepage](https://google.com). How many buttons have you ever used there? For me, it's 10 out of 15 buttons (including "Search" and "I'm Feeling Lucky" buttons). 33% button utility. This is a relatively good score for the modern web, and has no folders hiding any destinations. You *should* be aiming for a passing grade. Don't dare go under 10%.
 
-You don't need a hero image. It's big, unneccessary, and forces the user to scroll an entire page just to get to the one they expected to arrive at when they clicked the link. If uncompressed, it could possibly cost the user real money for no reason. Might I recommend the [Taft Test](https://web.archive.org/web/20231107104727/https://tafttest.com/)?
+You don't need a hero image. It's big, unneccessary, and forces the user to scroll an entire page just to get to the one they expected to arrive at when they clicked the link. If uncompressed, it could possibly cost the user real money for no reason. Might I recommend illustratively [replacing them with William Howard Taft](https://web.archive.org/web/20231107104727/https://tafttest.com/)?
 
 Washing crap from before the article also means you don't need to worry about a hidden-but-tabbable "skip to content" button, because it doesn't skip anything.
 
@@ -112,6 +113,8 @@ Cite your quotes and link to the source. You'll save users additional traffic, a
 Redundant? Yes. So is the other half your HTML. These links, even if identical, will never update. That's the point.
 
 Actually, this also allows you to utilize sources you've linked before and is much more flexible. You can word the citation any way you'd like, and I do this all the time. You don't need an em dash just because everyone else does it. You could use cool phrases like "as written by John Doe at BBC" and link to "as written" and to John Doe.
+
+All of your content should be written assuming that your links are all dead and search engines don't exist. If your writing makes less sense with these criteria, reword it.
 
 ## Write anchors correctly.
 
