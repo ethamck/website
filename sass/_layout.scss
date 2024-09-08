@@ -137,18 +137,6 @@ ul.tags {
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 1rem;
-
-	li {
-		border: thin solid hsl(0, 0%, 50%, 50%);
-		border-radius: 3px;
-		display: inline-block;
-	}
-
-	a {
-		color: inherit;
-		display: block;
-		padding-inline: 0.5em;
-	}
 }
 
 section#webring {

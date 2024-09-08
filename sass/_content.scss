@@ -1,3 +1,7 @@
+@function neutralize ($by) {
+	@return hsl(0, 0%, 50%, $by);
+}
+
 main a {
 	color: revert;
 	color: light-dark(#02d, #aaf);
@@ -9,11 +13,11 @@ main a {
 
 abbr[title] {
 	cursor: help;
-	text-decoration: underline dotted hsl(0, 0%, 50%, 100%);
+	text-decoration: underline dotted neutralize(100%);
 }
 
 aside {
-	border: thin solid hsl(0, 0%, 50%, 50%);
+	border: thin solid neutralize(50%);
 	padding: 1em;
 	opacity: 0.65;
 	overflow: hidden;
@@ -66,7 +70,7 @@ div.footnote-definition {
 }
 
 :is(div.footnote-definition, h1, h2, h3, h4, h5, h6):target {
-	background-color: hsl(0, 0%, 50%, 10%);
+	background-color: neutralize(10%);
 	padding: 1rem;
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -82,6 +86,14 @@ iframe {
 	display: block;
 	border: none;
 	outline: none;
+}
+
+input {
+	background: none;
+	border: thin solid neutralize(75%);
+	font: inherit;
+	padding: 0;
+	padding-inline: 0.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -104,7 +116,7 @@ header * {
 }
 
 hr {
-	border: 1px solid hsl(0, 0%, 50%, 50%);
+	border: 1px solid neutralize(50%);
 	color: inherit;
 	height: 0;
 	margin: 0 20%;
@@ -125,10 +137,10 @@ li {
 :not(pre) > code {
 	padding-block: 0.25em;
 	padding-inline: 0.5em;
-	background-color: hsl(0, 0%, 50%, 15%);
+	background-color: neutralize(15%);
 }
 pre:has(> code) {
-	background-color: hsl(0, 0%, 50%, 15%);
+	background-color: neutralize(15%);
 	padding-block: 1em;
 	overflow: auto;
 
@@ -148,7 +160,7 @@ pre:has(> code) {
 		color: inherit;
 	}
 	code > mark > span, :is(span, tr):has(mark) {
-		background-color: hsl(0, 0%, 50%, 25%);
+		background-color: neutralize(25%);
 	}
 	[data-lang = "diff"] mark {
 		font-weight: bolder;
@@ -189,7 +201,7 @@ table {
 	width: 100%;
 
 	&:has(thead) tbody td {
-		border: 0.1em solid hsl(0, 0%, 50%, 25%);
+		border: 0.1em solid neutralize(25%);
 		padding: 0.5em;
 
 		&:has(> a:only-child) {
