@@ -25,6 +25,7 @@
 	@supports (color: color(from white xyz x y z)) {
 		--gradient-background: linear-gradient(120deg, black, hsl(from var(--accent) h s calc(l / 2)), var(--accent), hsl(from var(--accent) h s calc(l / 3)));
 	}
+	accent-color: var(--accent);
 
 	/* Developed for Noto, falls back to https://systemfontstack.com */
 	font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;

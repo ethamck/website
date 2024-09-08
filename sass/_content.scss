@@ -134,45 +134,34 @@ pre:has(> code) {
 
 	> code {
 		display: block;
-
-		&:not(:has(table), :has(mark), .language-diff), > mark {
-			padding-inline-start: 1em;
-		}
+		width: fit-content;
 	}
 
-	mark {
-		background-color: hsl(0, 0%, 50%, 25%);
-		color: inherit;
+	:not(span) > span, > mark {
 		display: block;
+		padding-inline: 1em;
 		width: 100%;
 	}
 
-	td {
-		padding-block: 0;
-		padding-inline-start: 1em;
+	mark {
+		background: unset;
+		color: inherit;
+	}
+	code > mark > span, :is(span, tr):has(mark) {
+		background-color: hsl(0, 0%, 50%, 25%);
+	}
+	[data-lang = "diff"] mark {
+		font-weight: bolder;
+	}
 
-		&:nth-of-type(1) {
+	td {
+		padding: 0;
+
+		&:first-of-type {
+			padding-inline-start: 1em;
 			text-align: end;
-			user-select: none;
 			width: 0;
 		}
-
-		mark {
-			color: inherit;
-			background-color: unset;
-		}
-		&:has(mark) {
-			background-color: hsl(0, 0%, 50%, 25%);
-		}
-	}
-
-	code.language-diff, td:has(.z-diff) {
-		display: flex;
-		flex-direction: column;
-	}
-
-	code.language-diff > span > span {
-		margin-inline-start: 1em;
 	}
 }
 

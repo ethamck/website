@@ -38,5 +38,5 @@
 .z-git.z-changes.z-x {background-color: #272852;}
 .z-git.z-changes.z-\+ {background-color: #275822;}
 .z-git.z-changes.z-- {background-color: #a72822;}
-.z-diff:has(.z-markup.z-inserted.z-diff, .z-meta.z-diff.z-header.z-to-file) {color: #eefff8; background-color: #051b;}
-.z-diff:has(.z-markup.z-deleted.z-diff, .z-meta.z-diff.z-header.z-from-file) {color: #fff3ee; background-color: #a10b;}
+:is(:not(td, td mark) > span, tr):has(.z-markup.z-inserted.z-diff, .z-meta.z-diff.z-header.z-to-file) {color: #eefff8; background-color: #051b;}
+:is(:not(td, td mark) > span, tr):has(.z-markup.z-deleted.z-diff, .z-meta.z-diff.z-header.z-from-file) {color: #fff3ee; background-color: #a10b;}
