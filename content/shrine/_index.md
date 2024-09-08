@@ -3,7 +3,7 @@ title = "Shrines"
 description = "What a shrine is and an index of the ones I host."
 +++
 
-Shrines are more commonly known as [fansites](https://wikipedia.org/wiki/Fansite), the name under which [the most content is written about them](https://fanlore.org/wiki/Fansite). The term "shrine" [usually refers to a specific character or person](https://fanlore.org/wiki/Character_Shrine), but with the dominance of Neocities the two terms have more or less blended together, and you'll see shrines full of links rather than considering themselves their own source of truth, or a collection of eulogies to socks.
+Shrines are more commonly known as [fansites](https://en.wikipedia.org/wiki/Fansite), the name under which [the most content is written about them](https://fanlore.org/wiki/Fansite). The term "shrine" [usually refers to a specific character or person](https://fanlore.org/wiki/Character_Shrine), but with the dominance of Neocities the two terms have more or less blended together, and you'll see shrines full of links rather than considering themselves their own source of truth, or a collection of eulogies to socks.
 
 For all intents and purposes, an internet shrine is just a webpage crafted (usually from scratch) devoted to a specific thing that the author loves. Or hates. Many are retro or pay omage to the style of their topic material.
 
