@@ -3,7 +3,7 @@ title = "How to Center in CSS"
 description = "A simpler remake of the defunct howtocenterincss.com."
 +++
 
-This assumes standards-compliant rendering, which requires a `<!doctype html>` at the top of your document.
+Assumes standards-compliant rendering, which requires a `<!doctype html>` at the top of your document. <noscript>Requires JavaScript to render both code and preview.</noscript>
 
 Compared to [other resources](https://css-tricks.com/centering-css-complete-guide/), this page gives you a simple few decisions rather than a giant tree. For most purposes, this selects the best solution, zero redundancy.
 
@@ -42,7 +42,7 @@ A height of `5em` is applied to the container for illustrative purposes.
 <label><input id="multiline" name="multiline" type="checkbox"/> Multiline text</label><br/>
 <label><input id="direction" name="direction" type="checkbox" onclick="document.getElementById('preview').dir = this.checked ? 'rtl' : 'ltr'"/> Preview RTL</label>
 
-<h2 id="method"></h2>
+<h2 id="method">JavaScript is required for the calculation.</h2>
 <section id="preview" style="outline: thin dashed; min-height: 5em;"></section>
 <pre><code id="style" style="padding-inline-start: 1em;"></code></pre>
 <pre><code id="code" style="padding-inline-start: 1em;"></code></pre>
