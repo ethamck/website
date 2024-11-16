@@ -12,7 +12,7 @@ body {
 	margin: auto;
 	margin-block: 2rem;
 	max-width: 80ch;
-	max-width: min(132ch, 90%);
+	max-width: min(180ch, 90%);
 
 	@include wide {
 		grid-template: 
@@ -41,7 +41,7 @@ body {
 	> header {
 		grid-area: header;
 		margin-inline: auto;
-		min-width: min(50vw, 75%);
+		min-width: min(25rem, 50vw);
 
 		> a#logo > svg {
 			overflow: visible;
