@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Googol</title>
 <style>
 	/* I'm not brave enough to include this
@@ -22,8 +23,32 @@
 		color: #e6e1e3;
 		display: grid;
 		font-family: "Noto Sans", "Roboto", sans-serif;
-		grid-auto-rows: 90vh auto;
-		margin-block-end: 2.5%;
+		grid-auto-rows: 95vh auto;
+		margin-block-end: 1%;
+
+		> form {
+			display: grid;
+			grid-template-columns: repeat(2, min-content);
+			grid-template-rows: repeat(2, min-content);
+			gap: 1rem;
+			margin: auto;
+
+			> h1 {
+				font-size: 4rem;
+			}
+		}
+
+		> section {
+			text-align: center;
+
+			> ul > li {
+				display: inline;
+
+				+li::before {
+					content: " • ";
+				}
+			}
+		}
 	}
 	h1 {
 		font-family: "Google Sans", "Product Sans", "Avenir", "Glacial Indifference", "Futura";
@@ -33,16 +58,6 @@
 	}
 	a:hover, [type="submit"]:hover {
 		cursor: pointer;
-	}
-	body > form {
-		display: grid;
-		grid-template-columns: repeat(2, min-content);
-		grid-template-rows: repeat(2, min-content);
-		gap: 1rem;
-		margin: auto;
-	}
-	body > form > h1 {
-		font-size: 4rem;
 	}
 	input {
 		border: thin solid hsl(0, 0%, 50%, 50%);
@@ -55,23 +70,17 @@
 		max-width: 80ch;
 		width: 50cqw;
 	}
-	body > section {
-		display: grid;
-		gap: 2rem;
-		grid-template-columns: 1fr 1fr 1fr;
-		margin-inline: auto;
-		min-width: 40ch;
-	}
 </style>
 
 <form rel="noreferrer" action="https://google.com/search" autocomplete="off" method="get" role="search">
-	<h1><img style="height: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"/></h1>
+	<h1><img style="height: 100%; filter: brightness(125%) grayscale(100%);" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"/></h1>
 	<input type="search" name="q" placeholder="Search the world's information" autofocus/>
-	<input type="submit" value="Search"/>
+	<!--input type="submit" value="Search"/-->
 </form>
 <section>
-	<h1>Apps</h1>
-	<a href="https://gmail.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" title="Gmail" alt="Gmail"/></a>
-	<a href="https://maps.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Google_Maps_Logo_2020.svg" title="Maps" alt="Maps"/></a>
-	<a href="https://drive.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" title="Drive" alt="Drive"/></a>
+	<ul>
+		<li><a href="https://gmail.com/">gmail</a></li>
+		<li><a href="https://maps.google.com/">maps</a></li>
+		<li><a href="https://drive.google.com/">drive</a></li>
+	</ul>
 </section>
