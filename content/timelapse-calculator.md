@@ -22,7 +22,7 @@ description = "Calculate the interval to take pictures with given how many you c
 
 	<input id="fps" type="number" value="24" placeholder="Frames per second"/>
 
-and you can calculate to find interval by dividing the seconds in your session by the framerate. <span id="interval"></span>
+and you can calculate to find interval by dividing the seconds in your session by the number of pictures you can take in the session. <span id="interval"></span>
 
 <span id="time"></span>
 
