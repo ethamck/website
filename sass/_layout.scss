@@ -11,7 +11,7 @@ body {
 	margin: auto;
 	margin-block: 2rem;
 	max-width: 80ch;
-	max-width: min(180ch, 90%);
+	max-width: min(140ch, 90%);
 
 	@include wide {
 		gap: 1.5rem;
