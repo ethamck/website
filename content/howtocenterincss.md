@@ -27,9 +27,9 @@ A height of `5em` is applied to the container for illustrative purposes.
 <form>
 	<fieldset>
 		<legend>Horizontally</legend>
-		<label><input id="left" name="horizontal" type="radio" checked/> Left</label>
+		<label><input id="first" name="horizontal" type="radio" checked/> First</label>
 		<label><input id="center" name="horizontal" type="radio"/> Center</label>
-		<label><input id="right" name="horizontal" type="radio"/> Right</label>
+		<label><input id="last" name="horizontal" type="radio"/> Last</label>
 	</fieldset>
 	<fieldset>
 		<legend>Vertically</legend>
@@ -52,9 +52,9 @@ A height of `5em` is applied to the container for illustrative purposes.
 	function rerender() {
 		const inline = document.getElementById("inline").checked;
 
-		const left = document.getElementById("left").checked;
+		const first = document.getElementById("first").checked;
 		const center = document.getElementById("center").checked;
-		const right = document.getElementById("right").checked;
+		const last = document.getElementById("last").checked;
 
 		const top = document.getElementById("top").checked;
 		const middle = document.getElementById("middle").checked;
@@ -69,9 +69,9 @@ A height of `5em` is applied to the container for illustrative purposes.
 		if (inline && top) {
 			method = "Text align";
 			style = "text-align: ";
-			notes += "If the text itself should not be aligned, try centering a block instead.";
+			notes += "If the text itself should not be aligned, try centering a block instead. ";
 
-			if (left) {
+			if (first) {
 				method += " (default)";
 				style += "start;";
 			}
@@ -79,7 +79,7 @@ A height of `5em` is applied to the container for illustrative purposes.
 				notes += "The container must have a width large enough to align the text in, any width with a \"‑content\" probably won't work. ";
 				style += "center;";
 			}
-			else if (right) {
+			else if (last) {
 				style += "end;";
 			}
 
@@ -90,14 +90,14 @@ A height of `5em` is applied to the container for illustrative purposes.
 			style = "width: fit-content; ";
 			notes += "The child can be any type, like an image. ";
 
-			if (left) {
+			if (first) {
 				method += " (default)";
 				style += "margin-inline-end: auto;";
 			}
 			else if (center) {
 				style += "margin-inline: auto;";
 			}
-			else if (right) {
+			else if (last) {
 				style += "margin-inline-start: auto;";
 			}
 
@@ -107,7 +107,7 @@ A height of `5em` is applied to the container for illustrative purposes.
 			method = "Flexbox";
 			style = "display: flex; align-items: ";
 
-			if (top && left) {
+			if (top && first) {
 				method += " (default)";
 			}
 
@@ -123,7 +123,7 @@ A height of `5em` is applied to the container for illustrative purposes.
 
 			style += " justify-content: ";
 
-			if (left) {
+			if (first) {
 				style += "start;";
 			}
 			else if (center) {
@@ -132,7 +132,7 @@ A height of `5em` is applied to the container for illustrative purposes.
 				}
 				style += "center;";
 			}
-			else if (right) {
+			else if (last) {
 				style += "end;";
 			}
 
