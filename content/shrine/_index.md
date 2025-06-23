@@ -74,6 +74,17 @@ The page as archived with inline scripting can't even go in the [250KB club](htt
 
 I wager that for the most part our protagonist Colin Barschel knew little more than a beginner would about the web. Most of the business logic is either a giant `if` statement to decide what command the user is running or a giant array of every line in each psuedofile, and the rest is third-party. I do forfeit that this could be just what the state of the web was in 2006, though.
 
+### Back in 2025?
+
+As of [almost exactly 2025](https://web.archive.org/web/20250116220246/https://cb.vu/), cb.vu is back up as a domain, with some strange edits. Mainly,
+
+* There are now only three commands: `clear`, `echo`, and `date`
+* The whole website seems to have been redesigned in the style of those weird [wwx sites](https://web.archive.org/web/20230723164511/http://ww38.lttstore.net/), complete with an ugly navbar and [AI-ghostwritten pages that say nothing](https://web.archive.org/web/20250119182506/https://cb.vu/hosting)
+* References everywhere go to [tools.fun](https://tools.fun)
+* Colin has removed his name haphazardly from the most obvious places, copyrighting the site to "cb.vu" rather than himself, but failed to look any deeper in the site, and [the Unix Toolbox](https://web.archive.org/web/20250603035540/https://cb.vu/unixtoolbox.html), now HTML, still uses his name as an example for adding users
+
+I don't know what to make of this. To some extent, I wish cb.vu was left to rest. I don't think anyone was mourning the loss of the Unix Toolbox, and the removal of mystery with what's possible in a blank terminal has stripped the site of its uniqueness. It used to almost make you believe that you're talking to a real FreeBSD computer, but now it's just a gimmick on a pathetic site.
+
 ## [Google](googol.html)
 
 Remember when I said a shrine could be something the author hates?
