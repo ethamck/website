@@ -94,6 +94,18 @@ body {
 	}
 	> a#outline {
 		background: -moz-element(#content) no-repeat scroll center 0 / contain;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: opacity 0.2s ease;
+		}
+
+		@include wide {
+			opacity: 0.65;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
 	}
 
 	> footer {
@@ -153,6 +165,10 @@ section#webring {
 	@include wide {
 		grid-template-columns: repeat(3, 1fr);
 		margin-inline: 7.5%;
+	}
+
+	& > * {
+		margin: 0;
 	}
 
 	& > :not(article) {
