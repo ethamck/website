@@ -15,11 +15,11 @@
 		}
 	}
 
-	/* Cosmic latte and inversions, Crayola midnight blue */
+	/* Cosmic latte and inversion, Crayola midnight blue */
 	color-scheme: light dark;
 	--foreground: light-dark(#000718, #fff8e7);
-	--background: light-dark(#fff8e7, hsl(0, 0%, 10%));
-	--accent: #003366;
+	--background: light-dark(hsl(0, 0%, 90%), hsl(0, 0%, 10%));
+	--accent: #00468c;
 	--gradient-foreground: white;
 	--gradient-background: var(--accent);
 	@supports (color: color(from white xyz x y z)) {
@@ -60,7 +60,7 @@
 	&.proton {
 		/* Proton */
 		color-scheme: light dark;
-		--foreground: light-dark(rgb(73, 75, 122), rgb(255, 255, 255));
+		--foreground: light-dark(rgb(55, 37, 128), rgb(255, 255, 255));
 		--background: light-dark(rgb(247, 245, 255), rgb(22, 20, 28));
 		--accent: #6d4aff;
 
