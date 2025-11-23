@@ -26,9 +26,9 @@ I choose not to comment on alleged racism.
 
 </aside>
 
-To preface, I am not a "Star Wars fan", but I do enjoy the series. If I was ever so slightly more inclined, I'd read the novels, because I love the franchise's ideas. Revenge of the Sith is my favorite installment of the Skywalker saga.
+To preface, I am not a <cite>Star Wars<cite> fan, but I do enjoy the series. If I was ever so slightly more inclined, I'd read the novels, because I love the franchise's ideas. Revenge of the Sith is my favorite installment of the Skywalker saga.
 
-Seeing the Visions series, I realized that, since Star Wars was overall my first foray into the sci-fi world, it's very hard for me to come up with anything that doesn't at least feel like Star Wars when trying to be creative in the genre. Hell, [No Man's Sky](https://nomanssky.fandom.com/wiki/Freighter_Types#Venator-class) has a myriad of Star Wars-seeming ships. My problem with this is that Star Wars has so much unexplored potential on the screen.
+Seeing the Visions series, I realized that, since Star Wars was overall my first foray into the sci-fi world, it's very hard for to come up with anything that doesn't at least feel like Star Wars when trying to be creative in the genre. Hell, [No Man's Sky](https://nomanssky.fandom.com/wiki/Freighter_Types#Venator-class) has a myriad of Star Wars-seeming ships. My problem with this is that Star Wars has so much unexplored potential on the screen.
 
 Unlike the Marvel franchise, in which you can just about explore their world à la carte (I mostly only watch Guardians of the Galaxy and Spider-Man), Star Wars has:
 
@@ -76,7 +76,7 @@ Also, critizing the show's dialogue is the dumbest thing I've ever heard. Bcuz n
 
 It seems that for franchises whose most vocal following is primarily babies, I prefer listening to the critics who have some idea of what they're talking about instead of a bunch of degenerates who think that people being creative is an insult to George Lucas. George Lucas does not care.
 
-<q>Do fans have the appetite for yet another <cite>Star Wars</cite> spinoff only fleetingly connected to the galaxy they know?</q> from [The San Francisco Chronicle](https://datebook.sfchronicle.com/movies-tv/acolyte-disney-star-wars-19487477) continues echoing in my mind. The answer is that they don't. I'll point out that Andor probably only worked because it knew what it wanted to be. It was obvious that people hated the Empire, so why not a story about how one joins the rebellion?
+<q>Do fans have the appetite for yet another Star Wars spinoff only fleetingly connected to the galaxy they know?</q> from [The San Francisco Chronicle](https://datebook.sfchronicle.com/movies-tv/acolyte-disney-star-wars-19487477) continues echoing in my mind. The answer is that they don't. I'll point out that Andor probably only worked because it knew what it wanted to be. It was obvious that people hated the Empire, so why not a story about how one joins the rebellion?
 
 Okay, but here's the thing about The Acolyte: the *point* is that we're looking at Osha and Mae *learn* who they are. They *don't know*, and have a lot of conflict with their emotions. *That is the point*. That. is what the show is exploring.
 

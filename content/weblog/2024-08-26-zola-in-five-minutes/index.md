@@ -5,7 +5,7 @@ description = "A breakdown of Zola's philosophy and how I use it without themes.
 tags = ["web"]
 +++
 
-While described as a kind of "batteries included" <dfn><abbr title="Static site generator">SSG</abbr></dfn>, I don't think this is the case. [Zola](https://getzola.org), in my experience, has proven to be just another SSG that has opinions on defaults.
+[Zola](https://getzola.org), in my experience, has proven to be just another <dfn><abbr title="Static site generator">SSG</abbr></dfn> that has opinions on defaults. But I've come around to it. Zola's opinions are good.
 
 <!-- more -->
 
@@ -13,7 +13,7 @@ It doesn't help that the generator seems to be for those who don't design for th
 
 Its documentation separates content and templating, which is nice theoretically, but also just leads to separation of a lot of related (or exactly the same) content.
 
-I come from [Eleventy](https://11ty.dev), a JavaScript SSG that allows you to write all its functionality in one JavaScript file, so when I was shopping for a new generator, the main criteria was
+I come from [Eleventy](https://11ty.dev)[^1], a JavaScript SSG that allows you to write all its functionality in one JavaScript file, so when I was shopping for a new generator, the main criteria was
 
 - from scratch
 - not theme-focused
@@ -49,7 +49,7 @@ Sass compilation is optional, so if you prefer to write pure CSS it would just g
 
 Templates, however, are not.
 
-One thing that forces you to adopt the Zola way, though, is that **content can't have templating** (aside from a dedicated `templates/shortcodes/` directory, which is more advanced and not how to do single-page templating).
+Here's where I almost dropped Zola. **Content can't have templating**[^2].
 
 Strangely, this is a good thing. Your content *has* to extend from a layout. Zola won't serve an HTML file as a "page", but it will if it considers it a static asset to a post. This complicated [my shrine page](@/shrine/_index.md), since every single shrine there is written in raw HTML. They can't be served *by* Zola, but they can be linked to with a `.html` extension.
 
@@ -57,13 +57,13 @@ I think it would benefit Zola greatly if the distinction between the root page, 
 
 My first attempt at building this site led to extreme annoyance with the fact that the root page couldn't be written in Markdown as a "page". What I failed to understand then is that it *is*, as long as you eliminate the distinction in your mind.
 
-"Pages" are named either `yyyy-mm-dd-slug.md` or `index.md` in a folder with that name sans `.md`. "Sections" are named only `_index.md` and inherit the name from the directory.
+"Pages" are named either `yyyy-mm-dd-slug.md` or `index.md` in a folder with that name sans `.md`. "Sections" are named only `_index.md` and inherit the name from the directory. Both formats do the same thing, but pages can't have pages inside them.
 
 Assets for each post or section can be colocated, so `static/` is mainly just for global sitewide assets. Everything there is copied to `/`.
 
-The default templates also go in `templates/`. Section's default is `section.html` and page's default is `page.html`.
+The default templates go in `templates/`. Section's default is `section.html` and page's default is `page.html`.
 
-But. The root document `content/_index.md` *must be a section*, and its default is `index.html`, **not** `section.html`.
+But. The root document `content/_index.md` *must be a section*, and its default template is `index.html`, **not** `section.html`.
 
 A 404 page's default is `404.html`, and a few global configuration options in `config.toml` will enable or disable automatic generation of things like `sitemap.xml`, `rss.xml`, `atom.xml`, and `robots.txt`. Each of these files has a default template that you can override, but if you do, you have to write the entire thing from scratch.
 
@@ -75,7 +75,7 @@ Note that pages and sections, while they share some of the same variables, store
 
 </aside>
 
-This can be done, counter-intuitively, by using `index.html`, which in some configurations often inherit from `section.html`, as this page.
+This can be done, counter-intuitively, by setting `section.html` to inherit from `index.html`.
 
 The way that Zola does templating, with [Tera](https://keats.github.io/tera/docs), is fundamentally different from the way I was used to.
 
@@ -155,11 +155,7 @@ Appending a `-` to either side of a Tera line, `{%- -%}` or `{{- -}}`, will stri
 
 [There's another way to do this](https://keats.github.io/tera/docs#include), without direct inheritance, but using it is mutually exclusive with `{% extends %}` and I find it less elegant. For me, it needlessly increases verbosity.
 
-I write my `index.html` with all the boilerplate layout information that every page needs to have, then for sections implement a custom listing that changes based on how deep the post is in the year.
-
-Zola does, I forfeit, have many niceties that have let me create a truly static page where others would resort to client-side JavaScript.
-
-With that said, these are more or less [buried in the documentation](https://getzola.org/documentation/templates/pages-sections), and even in that page, it's all just explained with code comments. The same goes for implementing taxonomies, probably the best way I've seen to implement post tagging, which is also terribly onboarded.
+Once you get past all of that, Zola has some incredible features [buried in the documentation](https://getzola.org/documentation/templates/pages-sections) and all explained with code comments. For example, taxonomies; the best way I've seen to implement post tagging.
 
 A taxonomy is basically a collection of collections, so on a page's front matter you might have
 
@@ -206,7 +202,8 @@ For me, I wanted to use Visual Studio Code's theme as a kind of compromise, and 
 	copy the generated CSS files from `static`, clean them up, and merge them using [`light-dark()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark).
 
 
-[^1]: We'll just say that I moved away from Eleventy because JavaScript package management is [crapdosis](https://youtube.com/watch?v=QBK3QpQVnaw&t=557).
+[^1]: We'll just say that I moved away from Eleventy because JavaScript package management is [crapdosis](https://farside.link/invidious/watch?v=QBK3QpQVnaw&t=557) ([<samp>QBK3QpQVnaw</samp>](https://www.youtube-nocookie.com/embed/QBK3QpQVnaw?start=557)).
+[^2]: Aside from a dedicated `templates/shortcodes/` directory, which is more advanced and not how to do single-page templating.
 
 <style>
 main > article > header > small::after {
