@@ -11,10 +11,10 @@ body {
 	margin: auto;
 	margin-block: 2rem;
 	max-width: 80ch;
-	max-width: min(132ch, 90%);
+	max-width: min(160ch, 90%);
 
 	@include wide {
-		gap: 1.5rem;
+		gap: 1lh 3lh;
 		grid-template: 
 			". header ."
 			"theme main outline" min-content
@@ -38,6 +38,20 @@ body {
 				height: fit-content;
 				inset-block: 1rem;
 				position: sticky;
+			}
+		}
+	}
+
+	> nav, > a#outline {
+		@media (prefers-reduced-motion: no-preference) {
+			transition: opacity 0.2s ease;
+		}
+
+		@include wide {
+			opacity: 0.65;
+
+			&:hover {
+				opacity: 1;
 			}
 		}
 	}
@@ -86,26 +100,12 @@ body {
 		overflow-wrap: break-word;
 	}
 
-	> #outline {
+	> a#outline {
 		grid-area: outline;
+		background: -moz-element(#content) no-repeat scroll center 0 / contain;
 		display: block;
 		margin: 0 12.5%;
 		max-width: 75%;
-	}
-	> a#outline {
-		background: -moz-element(#content) no-repeat scroll center 0 / contain;
-
-		@media (prefers-reduced-motion: no-preference) {
-			transition: opacity 0.2s ease;
-		}
-
-		@include wide {
-			opacity: 0.65;
-
-			&:hover {
-				opacity: 1;
-			}
-		}
 	}
 
 	> footer {
