@@ -19,10 +19,10 @@
 	["https://youngadventuress.com", "https://youngadventuress.com/feed"],
 	["https://textslashplain.com", "https://textslashplain.com/feed"],
 	["https://matuzo.at", "https://matuzo.at/feed_all.xml"],
-	["https://lukealexdavis.co.uk", "https://lukealexdavis.co.uk/blog.xml"],
+	["https://hidde.blog", "https://hidde.blog/feed"],
+	["https://lukealexdavis.co.uk", "https://lukealexdavis.co.uk/omnifeed.xml"],
 	["https://ntietz.com", "https://ntietz.com/atom.xml"],
 	["https://stefanjudis.com", "https://stefanjudis.com/rss.xml"],
 	["https://chriscoyier.net", "https://chriscoyier.net/feed"],
-	["https://hidde.blog", "https://hidde.blog/feed"],
 	["https://blog.jim-nielsen.com", "https://blog.jim-nielsen.com/feed.xml"]
 ]

@@ -17,7 +17,7 @@ If you have a site where you have a page similar to this one and want to include
 	</style>
 </svg>
 
-```svg
+```xml
 <svg viewBox="0 0 456 128" width="88" height="31" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="8px" style="box-sizing: border-box; background: linear-gradient(90deg, #103070, #4b1919, #8a0f61, #4b2060, #937, #103070) repeat; background-size: 200% 200%; padding: 4px; animation: ethamck-88-31 3s linear infinite;">
 	<path d="M354 128V85c0-20-34-24-44-6m2 50V84c0-20-34-24-44-6m0 50V69Zm-9 0V84c0-20-30-21-46-11m46 16c-45 0-51 20-39 32 7 7 33 7 39-13m-92 20V22Zm0-52c11-15 38-12 38 8v44m-75-93v76c0 17 22 17 36 9m243 1c-57 27-65-70 0-52m10 59V22Zm36-64-32 26 33 38m-356-28L88 88m0-48 12-12M16 64h16M0 0l64 64M0 128l64-64m104 0H64M96 0C64 0 64 64 64 64s0 64 32 64"/>
 	<style>

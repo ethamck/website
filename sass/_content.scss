@@ -144,37 +144,21 @@ pre:has(> code) {
 	padding-block: 1em;
 	overflow: auto;
 
-	> code {
-		display: block;
-		width: fit-content;
-	}
-
-	:not(span) > span, > mark {
-		display: block;
-		padding-inline: 1em;
-		width: 100%;
-	}
-
-	mark {
-		background: unset;
-		color: inherit;
-	}
-	code > mark > span, :is(span, tr):has(mark) {
+	.z-hl {
 		background-color: neutralize(25%);
 	}
-	[data-lang = "diff"] mark {
-		font-weight: bolder;
-	}
-
-	td {
-		padding: 0;
-
-		&:first-of-type {
-			padding-inline-start: 1em;
-			text-align: end;
-			width: 0;
-		}
-	}
+}
+.giallo-l {
+    display: inline-block;
+    padding-inline: 1em;
+    width: 100%;
+}
+.giallo-ln {
+    display: inline-block;
+    user-select: none;
+    padding-inline-end: 1ch;
+    min-width: 3ch;
+    opacity: 0.75;
 }
 
 q {

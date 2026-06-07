@@ -4,18 +4,21 @@ title = "ethamck nexus"
 description = "The central hub on the web for all my thoughts and projects."
 author = "ethamck"
 default_language = "en"
+compile_sass = true
+
 taxonomies = [
 	{name = "tags", render = true},
 ]
 
-compile_sass = true
-
 [markdown]
-highlight_code = true
-highlight_theme = "css"
 smart_punctuation = true
 lazy_async_image = true
 bottom_footnotes = false
+
+[markdown.highlighting]
+error_on_missing_language = true
+style = "class"
+theme = "github-dark"
 
 [extra]
 pull_feeds = true
